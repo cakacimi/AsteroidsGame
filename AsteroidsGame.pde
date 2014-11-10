@@ -1,18 +1,3 @@
-//your variable declarations here
-public void setup() 
-{
-size(500,500);
-  //your code here
-}
-public void draw() 
-{
-background(0);
-ellipse(int(Math.random()*500), int(Math.random()*500), 20, 20);
-  //your code here
-}
-/*{   
-    //your code here
-}
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
@@ -89,5 +74,170 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     endShape(CLOSE);  
   }   
 } 
+SpaceShip enterprise = new SpaceShip();
+Stars[] hellaStars = new Stars[40];
+Asteroids [] cluster = new Asteroids [10];
 
-*/
+public void setup() 
+{
+  size(500,500);
+  background(0);
+  for(int i=0; i<hellaStars.length; i++)
+  {
+   hellaStars[i] = new Stars();
+ }
+ for(int i= 0; i<cluster.length; i++)
+ {
+  cluster[i] = new Asteroids();
+  }//your code here
+}
+
+
+public void draw() 
+{
+  background(0);
+  
+  enterprise.move();
+  enterprise.show();
+  for(int i= 0; i<hellaStars.length; i++)
+  {
+    hellaStars[i].show();
+  }
+  for(int i=0; i<cluster.length; i++)
+  {
+    cluster[i].show();
+    cluster[i].move();
+  }
+}
+
+public void keyPressed()
+{
+  if(key == 'a')
+  {
+    enterprise.accelerate(1);
+  }
+
+  if(key == 'd')
+  {
+    enterprise.accelerate(-1);
+  }
+  if(key=='r')
+  {
+    enterprise.rotate(5);
+  }
+  if(key=='l')
+  {
+    enterprise.rotate(-5);
+  }
+  if(key ==' ')
+  {
+    enterprise.setX((int)(Math.random()*500));
+    enterprise.setY((int)(Math.random()*500));
+    enterprise.setPointDirection((int)(Math.random()*360));
+  }
+}
+
+//constructor//
+class SpaceShip extends Floater
+{
+  public SpaceShip()
+  {
+    corners = 4;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    xCorners[0]= -8;
+    yCorners[0]= -8;
+    xCorners[1]= 16;
+    yCorners[1]= 0;
+    xCorners[2]= -8;
+    yCorners[2]= 8;
+    xCorners[3]= -2;
+    yCorners[3]= 0;
+    myColor=255;
+    myCenterX= 250;
+    myCenterY= 250;
+    myDirectionX=0;
+    myDirectionY=0;
+    myPointDirection= 270;
+  }
+
+  public void setX(int x){myCenterX= x;}
+  public int getX(){return (int)myCenterX;}
+  public void setY(int y){myCenterY= y;}
+  public int getY(){return(int) myCenterY;}
+  public void setDirectionX(double x){myDirectionX=x;}
+  public double getDirectionX(){return myDirectionX;}
+  public void setDirectionY(double y){myDirectionY= y;}
+  public double getDirectionY() {return myDirectionY;}
+  public void setPointDirection(int degrees){myPointDirection=degrees;}
+  public double getPointDirection(){return myPointDirection;}
+}
+
+class Stars
+{
+  private int myX;
+  private int myY;
+  private int size;
+  private int myColor;
+
+  public Stars()
+  {
+    myX= (int)(Math.random()*500);
+    myY= (int)(Math.random()*500);
+    size = 5;
+    myColor= color(0,255,0);
+  }
+  public void show()
+  {
+    fill(myColor);
+    ellipse(myX,myY,size,size);
+  }
+}
+
+class Asteroids extends Floater
+{
+  private int rotSpeed;
+  public Asteroids()
+  {
+    rotSpeed = 5;
+    corners = 6;
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    xCorners[0]= -11;
+    yCorners[0]= -8;
+    xCorners[1]= 7;
+    yCorners[1]= -8;
+    xCorners[2]= 13;
+    yCorners[2]= 0;
+    xCorners[3]=6;
+    yCorners[3]=10;
+    xCorners[4]=-11;
+    yCorners[4]=8;
+    xCorners[5]=-5;
+    yCorners[5]=0;
+    myCenterX=(int)(Math.random()*500);
+    myCenterY= (int)(Math.random()*500);
+    myDirectionX=(int)(Math.random()*3)-2;
+    myDirectionY= (int)(Math.random()*3)-2;
+    myPointDirection = (int)(Math.random()*360);
+    myColor = color(205,133,63);
+  }
+  
+  public void setX(int x){myCenterX = x;}
+  public int getX() {return (int) myCenterX;}
+  public void setY(int y){myCenterY = y;}
+  public int getY(){return(int) myCenterY;}
+  public void setDirectionX(double x){myDirectionX= x;}
+  public double getDirectionX(){return myDirectionX;}
+  public void setDirectionY(double y){myDirectionY = y;}
+  public double getDirectionY(){return myDirectionY;}
+  void setPointDirection(int degrees){myPointDirection=degrees;}
+  public double getPointDirection(){return myPointDirection;}
+  public void move()
+  {
+    rotate(rotSpeed);
+    super.move();
+  }
+
+
+}
