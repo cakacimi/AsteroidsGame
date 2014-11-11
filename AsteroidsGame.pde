@@ -106,7 +106,7 @@ public void draw()
   }
   for(int i=0; i<cluster.length; i++)
   {
-    background = (127,0,255);
+    
     cluster[i].show();
     cluster[i].move();
   }
@@ -197,8 +197,8 @@ class Stars
   
   public void move()
   {
-  myX= myX + ((int)Math.random()*500);
-  myY = myY + ((int)Math.random()*500);
+  myX= myX + 4;
+  myY = myY + 4;
   
   }
 }
