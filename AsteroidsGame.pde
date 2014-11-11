@@ -106,6 +106,7 @@ public void draw()
   }
   for(int i=0; i<cluster.length; i++)
   {
+    background = (127,0,255);
     cluster[i].show();
     cluster[i].move();
   }
