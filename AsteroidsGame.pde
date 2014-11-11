@@ -75,7 +75,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   }   
 } 
 SpaceShip enterprise = new SpaceShip();
-Stars[] hellaStars = new Stars[40];
+Stars[] hellaStars = new Stars[30];
 Asteroids [] cluster = new Asteroids [10];
 
 public void setup() 
@@ -96,7 +96,8 @@ public void setup()
 public void draw() 
 {
   background(0,0,205);
-  
+  enterprise.move();
+  enterprise.show();
   
   for(int i= 0; i<hellaStars.length; i++)
   {
@@ -109,8 +110,7 @@ public void draw()
     cluster[i].show();
     cluster[i].move();
   }
-  enterprise.move();
-  enterprise.show();
+  
 }
 
 public void keyPressed()
