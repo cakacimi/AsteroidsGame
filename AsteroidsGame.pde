@@ -187,12 +187,14 @@ class Stars
     myX= (int)(Math.random()*500);
     myY= (int)(Math.random()*500);
     size = 9;
-    myColor= color(0);
+    myColor= color(255);
+    m
   }
   public void show()
   {
     fill(myColor);
     ellipse(myX,myY,size,size);
+  
   }
   
   public void move()
