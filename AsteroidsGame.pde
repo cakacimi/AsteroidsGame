@@ -116,12 +116,12 @@ public void keyPressed()
 {
   if(key == 'a')
   {
-    enterprise.accelerate(.1);
+    enterprise.accelerate(3);
   }
 
   if(key == 'd')
   {
-    enterprise.accelerate(-.1);
+    enterprise.accelerate(-3);
   }
   if(key=='r')
   {
