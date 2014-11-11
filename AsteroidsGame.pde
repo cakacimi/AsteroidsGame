@@ -102,6 +102,7 @@ public void draw()
   for(int i= 0; i<hellaStars.length; i++)
   {
     hellaStars[i].show();
+    hellaStars[i].move();
   }
   for(int i=0; i<cluster.length; i++)
   {
@@ -191,6 +192,13 @@ class Stars
   {
     fill(myColor);
     ellipse(myX,myY,size,size);
+  }
+  
+  public void move()
+  {
+  myX= myX + ((int)Math.random()*500);
+  myY = myY + ((int)Math.random()*500);
+  
   }
 }
 
