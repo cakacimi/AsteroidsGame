@@ -186,7 +186,7 @@ class Stars
   {
     myX= (int)(Math.random()*500);
     myY= (int)(Math.random()*500);
-    size = 5;
+    size = 12;
     myColor= color(255,255,51);
   }
   public void show()
