@@ -145,13 +145,13 @@ class SpaceShip extends Floater
     corners = 4;
     xCorners = new int[corners];
     yCorners = new int[corners];
-    xCorners[0]= -40;
-    yCorners[0]= -40;
-    xCorners[1]= 80;
+    xCorners[0]= -20;
+    yCorners[0]= -20;
+    xCorners[1]= 40;
     yCorners[1]= 0;
-    xCorners[2]= -40;
-    yCorners[2]= 40;
-    xCorners[3]= -10;
+    xCorners[2]= -20;
+    yCorners[2]= 20;
+    xCorners[3]= -5;
     yCorners[3]= 0;
     myColor=(0);
     myCenterX= 250;
@@ -185,7 +185,7 @@ class Stars
     myX= (int)(Math.random()*500);
     myY= (int)(Math.random()*500);
     size = 5;
-    myColor= color(0,255,0);
+    myColor= color(255,255,51);
   }
   public void show()
   {
