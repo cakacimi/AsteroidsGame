@@ -95,7 +95,7 @@ public void setup()
 
 public void draw() 
 {
-  background(0);
+  background(127,0,255);
   
   enterprise.move();
   enterprise.show();
@@ -153,7 +153,7 @@ class SpaceShip extends Floater
     yCorners[2]= 40;
     xCorners[3]= -10;
     yCorners[3]= 0;
-    myColor=(153,153,255);
+    myColor=(0);
     myCenterX= 250;
     myCenterY= 250;
     myDirectionX=0;
