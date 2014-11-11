@@ -109,9 +109,10 @@ public void draw()
     cluster[i].show();
     cluster[i].move();
   }
-}
-enterprise.move();
+  enterprise.move();
   enterprise.show();
+}
+
 public void keyPressed()
 {
   if(key == 'a')
