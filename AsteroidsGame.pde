@@ -95,7 +95,7 @@ public void setup()
 
 public void draw() 
 {
-  background(127,0,255);
+  background(0,0,205);
   
   enterprise.move();
   enterprise.show();
