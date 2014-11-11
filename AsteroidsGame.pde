@@ -197,8 +197,8 @@ class Stars
   
   public void move()
   {
-  myX= myX + 4;
-  myY = myY + 4;
+  myX=(int)(Math.random()*500);
+  myY =(int)(Math.random()*500);
   
   }
 }
