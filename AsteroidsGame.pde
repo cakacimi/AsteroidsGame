@@ -78,8 +78,10 @@ SpaceShip enterprise = new SpaceShip();
 Stars[] hellaStars = new Stars[30];
 Asteroids [] cluster = new Asteroids [10];
 
+ boolean gamestart = false;
 public void setup() 
 {
+ 
   size(500,500);
   background(0);
   for(int i=0; i<hellaStars.length; i++)
@@ -89,13 +91,44 @@ public void setup()
  for(int i= 0; i<cluster.length; i++)
  {
   cluster[i] = new Asteroids();
-  }//your code here
+  }//your code here//
 }
 
 
 public void draw() 
 {
-  background(0,0,205);
+
+
+  if ( gamestart == false)
+  {
+  background(0);
+
+   
+  for(int i= 0; i<hellaStars.length; i++)
+  {
+    hellaStars[i].show();
+    hellaStars[i].move();
+  }
+
+  
+  textSize(50);
+  fill(255);
+  text("ASTEROIDILICOUS",30,250);
+    textSize(25);
+    fill(255,0,0);
+   text("Press space to start game",80,350);
+   textSize(14);
+   fill(255);
+   text("A Camilia Kacimi Creation",130,380);
+   text("Powered by Peace Of Mind Media",100,400);
+  }
+  
+if( get(10,10)==color(0,0,205))
+{gamestart = true;}
+
+  if (gamestart == true)
+  {
+      background(0,0,205);
   enterprise.move();
   enterprise.show();
   
@@ -110,11 +143,16 @@ public void draw()
     cluster[i].show();
     cluster[i].move();
   }
+  }
   
 }
 
 public void keyPressed()
 {
+  if(key == ' ')
+  {
+  gamestart = true;
+  }
   if(key == 'a')
   {
     enterprise.accelerate(3);
