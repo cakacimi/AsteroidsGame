@@ -191,9 +191,9 @@ class Bullet extends Floater{
   double dRadians;
   Bullet(){
     myColor = color(0,255,0);
-    myCenterX = zeus.getX();
-    myCenterY = zeus.getY();
-    myPointDirection = zeus.getPointDirection();
+    myCenterX = enterprise.getX();
+    myCenterY = enterprise.getY();
+    myPointDirection = enterprise.getPointDirection();
     dRadians = myPointDirection*(Math.PI/180);
     myDirectionX = 5 * Math.cos(dRadians);
     myDirectionY = 5 * Math.sin(dRadians);
