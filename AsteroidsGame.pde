@@ -6,7 +6,7 @@ private ArrayList <Bullet> shoot = new ArrayList <Bullet>();
 
 public void setup(){
   size(500,500);
-  zeus = new SpaceShip();
+  enterprise = new SpaceShip();
   hellaStars = new Star[200];
   for(int i = 0; i < hellaStars.length; i++){
     hellaStars[i] = new Star();
