@@ -1,4 +1,4 @@
-private SpaceShip zeus;
+private SpaceShip enterprise;
 private Star[] hellaStars;
 //public int lives = 3;
 private ArrayList <Asteroids> cluster = new ArrayList <Asteroids>();
@@ -30,22 +30,22 @@ for(int i= 0; i<hellaStars.length; i++)
 
 
      background(0,0,205);
-      zeus.show();
-      zeus.move();
+      enterprise.show();
+      enterprise.move();
       
      
   if(keyPressed == true){
     if (key == 'l'){
-      zeus.rotate(-3);
+      enterprise.rotate(-3);
     }
     if (key == 'r'){
-      zeus.rotate(3);
+       enterprise.rotate(3);
     }
     if (key == 'a'){
-      zeus.accelerate(.3);
+       enterprise.accelerate(.3);
     }
     if (key == 'd'){
-      zeus.accelerate(-.3);
+       enterprise.accelerate(-.3);
     }
     //idk why it won't turn the background black when i press the spacebar!!//
     
@@ -92,10 +92,10 @@ for(int i= 0; i<hellaStars.length; i++)
 
 void keyPressed(){
   if (key == 'f'){
-      zeus.setX((int)(Math.random() * 500) + 1);
-      zeus.setY((int)(Math.random() * 500) + 1);
-      zeus.setDirectionX(0);
-      zeus.setDirectionY(0);
+       enterprise.setX((int)(Math.random() * 500) + 1);
+      enterprise.setY((int)(Math.random() * 500) + 1);
+      enterprise.setDirectionX(0);
+       enterprise.setDirectionY(0);
     }
     if (key == ' '){
       shoot.add(new Bullet());
