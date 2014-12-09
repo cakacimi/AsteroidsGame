@@ -22,11 +22,13 @@ public void setup(){
 public void draw() 
 { 
 
-      for(int i= 0; i<hellaStars.length; i++)
+  for(int i= 0; i<hellaStars.length; i++)
   {
     hellaStars[i].show();
  }
-
+   background(0,0,205);
+      enterprise.show();
+      enterprise.move();
      
   if(keyPressed == true){
     if (key == 'l'){
@@ -81,9 +83,7 @@ public void draw()
     }
   }
 
-     background(0,0,205);
-      enterprise.show();
-      enterprise.move();
+  
 }
 
 
